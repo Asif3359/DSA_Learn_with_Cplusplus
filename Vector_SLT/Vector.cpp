@@ -212,6 +212,42 @@ void vectorInput(void)
     
 }
 
+
+//ArrayOfVector
+void ArrayOfVector(void)
+{
+    int N ; 
+    cout << "Enter Vector Size : ";
+    cin >> N;
+    cin.ignore();
+
+    // vector<string>V;
+    vector<string>V(N);
+
+    // for (int i = 0; i < N; i++)
+    // {
+    //     string item ;
+    //     cin >> item;
+    //     V.push_back(item);
+    //     // cin >> V[i];
+    // }
+
+    for (int i = 0; i < N; i++)
+    {
+        // string item ;
+        // cin >> item;
+        // V.push_back(item);
+        getline(cin ,V[i]);
+    }
+
+    for (string val : V)
+    {
+        cout << val << "\n";
+    }
+    
+    cout << "\n";
+}
+
 int main()
 {
     
@@ -223,8 +259,8 @@ int main()
     // vectorreplace();
     // vectorFind();
     // vectorAccess();
+    // vectorInput();
 
-    vectorInput();
-
+    ArrayOfVector();
     return 0;
 }
