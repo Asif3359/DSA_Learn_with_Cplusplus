@@ -16,6 +16,39 @@ public:
     }
 };
 
+void preorder(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    cout << root->Val << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void postorder(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->Val << " ";
+}
+
+void inOrder(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    inOrder(root->left);
+    cout << root->Val << " ";
+    inOrder(root->right);
+}
+
 int main()
 {
     Node *root = new Node(10);
@@ -39,5 +72,13 @@ int main()
     d->right = g;
     h->right = i;
 
+    preorder(root);
+    cout << endl;
+
+    postorder(root);
+    cout << endl;
+
+    inOrder(root);
+    cout << endl;
     return 0;
 }
